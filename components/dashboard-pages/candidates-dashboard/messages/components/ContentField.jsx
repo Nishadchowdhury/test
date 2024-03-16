@@ -2,18 +2,47 @@
 
 import Image from "next/image";
 import ChatHamburger from "../../../employers-dashboard/messages/components/ChatHamburger";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 
 const ChatBoxContentField = () => {
 
-  const [Conversation, setConversation] = useState([{
+  const messageContainerRef = useRef(null)
 
-    
 
-  }])
+  const [conversation, setConversation] = useState(
 
+    [
+      {
+        id: 1,
+        message: "How likely are you to recommend our company to your friends and family?",
+        sender: false,
+        name: "Albert Flores"
+      },
+      {
+        id: 2,
+        message: " Hey there, we’re just writing to let you know that you’ve been subscribed to a repository on GitHub.",
+        sender: true,
+      },
+      {
+        id: 3,
+        message: "  Ok, Understood!",
+        sender: false,
+        name: " Cameron Williamson"
+      },
+
+    ])
+
+
+
+  //scroll to top after adding a message 
+  useEffect(() => {
+    messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+  }, [conversation]);
+
+
+  //dummy image component 
   const img = <Image
     width={48}
     height={48}
@@ -22,6 +51,22 @@ const ChatBoxContentField = () => {
     className="rounded-circle user_img"
   />
 
+
+  // adding message to existing message state
+  function addMessage(e) {
+    e.preventDefault()
+
+    setConversation(p => {
+      const messages = [...p, { id: p.length + 1, message: e.target.elements.text.value, sender: true, }]
+      return messages
+    })
+
+    setTimeout(() => {
+      e.target.elements.text.value = "";
+    }, 100)
+
+
+  }
 
   return (
     <div className="card message-card">
@@ -44,53 +89,42 @@ const ChatBoxContentField = () => {
       </div>
       {/* End .cart-header */}
 
-      <div className="card-body msg_card_body">
+      <div
+        ref={messageContainerRef}
+        className="card-body msg_card_body"
+      >
 
-        <div className="d-flex justify-content-start mb-2">
-          <div className="img_cont_msg">
-            {img}
-            <div className="name">
-              Albert Flores <span className="msg_time">35 mins</span>
-            </div>
-          </div>
-          <div className="msg_cotainer">
-            How likely are you to recommend our company to your friends and
-            family?
-          </div>
-        </div>
 
-        <div className="d-flex justify-content-end mb-2 reply">
-          <div className="img_cont_msg">
-            {img}
-            <div className="name">
-              You <span className="msg_time">35 mins</span>
-            </div>
-          </div>
-          <div className="msg_cotainer">
-            Hey there, we’re just writing to let you know that you’ve been
-            subscribed to a repository on GitHub.
-          </div>
-        </div>
+        {
+          conversation?.map(({ name, message, sender }, i) => {
 
-        <div className="d-flex justify-content-start">
-          <div className="img_cont_msg">
-            {img}
-            <div className="name">
-              Cameron Williamson <span className="msg_time">35 mins</span>
-            </div>
-          </div>
-          <div className="msg_cotainer">Ok, Understood!</div>
-        </div>
-        
+            return (
+              <div key={i} className={`d-flex   ${sender ? " mb-2 justify-content-end reply " : " justify-content-start "} `}>
+                <div className="img_cont_msg">
+                  {img}
+                  <div className="name">
+                    {name ? name : "You"} <span className="msg_time">35 mins</span>
+                  </div>
+                </div>
+                <div className="msg_cotainer">
+                  {message}
+                </div>
+              </div>
+            )
+
+          })
+        }
+
       </div>
       {/* End .card-body */}
 
       <div className="card-footer">
         <div className="form-group mb-0">
-          <form>
+          <form onSubmit={addMessage} >
             <textarea
               className="form-control type_msg"
               placeholder="Type a message..."
+              name="text"
               required
             ></textarea>
             <button

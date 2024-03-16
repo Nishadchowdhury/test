@@ -54,7 +54,7 @@ const JobAlertsTable = () => {
                                 src={item.logo}
                                 alt="logo"
                               />
-                              <JobDetailsOffcanvas data={item} />
+                              <JobDetailsOffcanvas item={item} />
                             </span>
                             <h4>
                               <Link href={`/job/${item.id}`}>
@@ -80,28 +80,32 @@ const JobAlertsTable = () => {
                     <td>
                       <div className="option-box">
                         <ul className="option-list">
+
                           <li>
                             <button data-text="View Aplication">
-                              <span className="la la-eye"></span>
-                            </button>
-                          </li>
-                          <li>
-                            <button data-text="Accept">
-                              <span className="la la-check"></span>
-                            </button>
-                          </li>
-                          <li>
-                            <button data-text="Decline">
-
 
                               <a
                                 href="#"
                                 className="mobile-nav-toggler"
                                 data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasMenuJobDetails"
+                                data-bs-target={`#offcanvasMenuJobDetails${item.id}`}
                               >
-                                <span className="la la-times-circle"></span>
+                                <span className="la la-eye"></span>
                               </a>
+                            </button>
+                          </li>
+
+                          <li>
+                            <button data-text="Accept">
+                              <span className="la la-check"></span>
+                            </button>
+                          </li>
+
+                          <li>
+                            <button data-text="Decline">
+
+
+                              <span className="la la-times-circle"></span>
                             </button>
                           </li>
                         </ul>

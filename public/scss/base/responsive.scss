@@ -1,5 +1,25 @@
 /* Superio | Just another HTML Template  */
 
+@media only screen and (min-width: 2500px) {
+	.slideOpen{
+		padding-left: calc(300px )
+	}
+	.slideClose{
+		padding-left: 5vw
+	}
+
+}
+
+@media only screen and (max-width: 2500px) {
+	.slideOpen{
+		padding-left: 310px
+	}
+	.slideClose{
+		padding-left: 5vw
+	}
+
+}
+
 @media only screen and (max-width: 1600px) {
 	.slideOpen{
 		padding-left: 297px

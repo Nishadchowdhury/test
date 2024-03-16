@@ -7,6 +7,7 @@ import Form from "./FormContent";
 import Link from "next/link";
 
 const Register = () => {
+  // return null
   return (
     <div className="form-inner">
       <h3>Create a Free RemoteCoded Account</h3>

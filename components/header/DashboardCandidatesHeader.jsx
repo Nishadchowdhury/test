@@ -8,6 +8,7 @@ import HeaderNavContent from "./HeaderNavContent";
 import { isActiveLink } from "../../utils/linkActiveChecker";
 
 import { usePathname } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
 const DashboardCandidatesHeader = () => {
     const [navbar, setNavbar] = useState(false);
 
@@ -28,9 +29,8 @@ const DashboardCandidatesHeader = () => {
     return (
         // <!-- Main Header-->
         <header
-            className={`main-header header-shaddow  ${
-                navbar ? "fixed-header " : ""
-            }`}
+            className={`main-header header-shaddow  ${navbar ? "fixed-header " : ""
+                }`}
         >
             <div className="container-fluid">
                 {/* <!-- Main box --> */}
@@ -71,23 +71,18 @@ const DashboardCandidatesHeader = () => {
 
                         {/* <!-- Dashboard Option --> */}
                         <div className="dropdown dashboard-option">
-                            <a
+                            {/* <a
                                 className="dropdown-toggle"
                                 role="button"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
-                            >
-                                <Image
-                                    alt="avatar"
-                                    className="thumb"
-                                    src="/images/resource/candidate-1.png"
-                                    width={50}
-                                    height={50}
-                                />
-                                <span className="name">My Account</span>
-                            </a>
+                            > */}
 
-                            <ul className="dropdown-menu">
+                            <UserButton />
+                            {/* <span className="name">My Account</span> */}
+                            {/* </a> */}
+
+                            {/* <ul className="dropdown-menu">
                                 {candidatesMenuData.map((item) => (
                                     <li
                                         className={`${
@@ -108,7 +103,7 @@ const DashboardCandidatesHeader = () => {
                                         </Link>
                                     </li>
                                 ))}
-                            </ul>
+                            </ul> */}
                         </div>
                         {/* End dropdown */}
                     </div>

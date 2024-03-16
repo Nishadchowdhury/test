@@ -16,9 +16,11 @@ import {
   isActiveParentChaild,
 } from "../../utils/linkActiveChecker";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 
 
-const Index = ({ data }) => {
+const Index = ({ item }) => {
 
   const router = useRouter()
 
@@ -26,7 +28,7 @@ const Index = ({ data }) => {
     <div
       className="offcanvas offcanvas-end mobile_menu-contnet"
       tabIndex="-1"
-      id="offcanvasMenuJobDetails"
+      id={`offcanvasMenuJobDetails${item?.id}`}
       data-bs-scroll="true"
     >
       <SidebarHeader />
@@ -34,9 +36,36 @@ const Index = ({ data }) => {
 
 
       <Sidebar>
-        <Menu>
-          {data?.id}
-        </Menu>
+          <div className="job-block px-3">
+            <div className="inner-box">
+              <div className="content">
+                <span className="company-logo">
+                  <Image
+                    width={50}
+                    height={49}
+                    src={item?.logo}
+                    alt="logo"
+                  />
+                  
+                </span>
+                <h4>
+                  <Link href={`/job/${item?.id}`}>
+                    {item?.jobTitle}
+                  </Link>
+                </h4>
+                <ul className="job-info">
+                  <li>
+                    <span className="icon flaticon-briefcase"></span>
+                    Segment
+                  </li>
+                  <li>
+                    <span className="icon flaticon-map-locator"></span>
+                    London, UK
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
       </Sidebar>
 
 

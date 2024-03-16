@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.9",
     "@faker-js/faker": "^8.1.0",
     "@reduxjs/toolkit": "^1.9.6",
     "aos": "^2.3.4",
