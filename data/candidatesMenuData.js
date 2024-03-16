@@ -1,0 +1,51 @@
+module.exports = [
+  {
+    id: 2,
+    name: "My Profile",
+    icon: "la-user-tie",
+    routePath: "/dashboard/my-profile",
+    active: "",
+  },
+  // {
+  //   id: 3,
+  //   name: "My Resume",
+  //   icon: "la la-file-invoice",
+  //   routePath: "/dashboard/my-resume",
+  //   active: "",
+  // },
+  {
+    id: 5,
+    name: "Interview Invites",
+    icon: "la la-bell",
+    routePath: "/dashboard/interview-invites",
+    active: "",
+  },
+  {
+    id: 9,
+    name: "Messages",
+    icon: "la-comment-o",
+    routePath: "/dashboard/messages",
+    active: "",
+  },
+  {
+    id: 10,
+    name: "Change Password",
+    icon: "la-lock",
+    routePath: "/dashboard/change-password",
+    active: "",
+  },
+  {
+    id: 11,
+    name: "Logout",
+    icon: "la-sign-out",
+    routePath: "/login",
+    active: "",
+  },
+  {
+    id: 12,
+    name: "Delete Profile",
+    icon: "la-trash",
+    routePath: "/",
+    active: "",
+  },
+];
