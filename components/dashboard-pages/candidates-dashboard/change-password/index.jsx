@@ -1,9 +1,9 @@
 "use client"
 import CopyrightFooter from "../../CopyrightFooter";
 import Form from "./components/Form";
-import MenuToggler from "../../MenuToggler"; 
-import PopUpWrapper from "../../components/common/popUpWrapper/PopUpwrapper";
- 
+import MenuToggler from "../../MenuToggler";
+// import PopUpWrapper from "../../components/common/popUpWrapper/PopUpwrapper";
+import PopUpWrapper from "@/components/common/popUpWrapper/PopUpWrapper";
 import { useSelector } from "react-redux";
 
 const index = () => {
