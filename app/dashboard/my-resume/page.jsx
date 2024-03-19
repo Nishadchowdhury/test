@@ -11,10 +11,10 @@ const index = () => {
 
 
 
-  // if (typeof window === 'undefined') {
-  //   redirect('/');
-  //   return null;
-  // }
+  if (typeof window === 'undefined') {
+    redirect('/dashboard/my-profile');
+    return null;
+  }
 
   // return null;
 

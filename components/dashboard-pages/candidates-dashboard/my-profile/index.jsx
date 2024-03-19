@@ -24,7 +24,7 @@ const index = () => {
       >
         <div className="dashboard-outer">
 
-          <MenuToggler />
+          {/* <MenuToggler /> */}
           {/* Collapsible sidebar button */}
 
           <div className="row">

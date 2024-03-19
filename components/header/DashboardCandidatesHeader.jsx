@@ -9,11 +9,14 @@ import { isActiveLink } from "../../utils/linkActiveChecker";
 
 import { usePathname } from "next/navigation";
 import { UserButton } from "@clerk/nextjs";
+
+import MenuToggler from "../dashboard-pages/MenuToggler";
+import { useSelector } from "react-redux";
+
 const DashboardCandidatesHeader = () => {
+    const { menu } = useSelector((state) => state.toggle);
     const [navbar, setNavbar] = useState(false);
-
-
-
+  
     const changeBackground = () => {
         if (window.scrollY >= 0) {
             setNavbar(true);
@@ -29,16 +32,17 @@ const DashboardCandidatesHeader = () => {
     return (
         // <!-- Main Header-->
         <header
-            className={`main-header header-shaddow  ${navbar ? "fixed-header " : ""
+            className={`main-header header-shaddow py-2 ${navbar ? "fixed-header " : ""
                 }`}
         >
             <div className="container-fluid">
                 {/* <!-- Main box --> */}
-                <div className="main-box">
+                <div className="main-box ">
                     {/* <!--Nav Outer --> */}
-                    <div className="nav-outer">
+                    <div className="nav-outer"> 
                         <div className="logo-box">
-                            <div className="logo opacity-0">
+
+                            <div className="logo  hidden-md w-0">
                                 <Link href="/">
                                     <Image
                                         alt="brand"
@@ -52,6 +56,11 @@ const DashboardCandidatesHeader = () => {
                         </div>
                         {/* End .logo-box */}
 
+
+                        <div className={"baseTransition " + (menu ? "slideOpen " : " slideClose ")}>
+                            <div className="ms-2 d-none d-lg-block"> <MenuToggler /> </div>
+                        </div>
+
                         {/* <HeaderNavContent /> */}
                         {/* <!-- Main Menu End--> */}
                     </div>
@@ -63,14 +72,19 @@ const DashboardCandidatesHeader = () => {
                             <span className="icon la la-heart-o"></span>
                         </button> */}
                         {/* wishlisted menu */}
+                        <div className={"baseTransition me-2" + (menu ? "slideOpen " : " slideClose ")}>
+                            <div className="ms-2 d-block d-lg-none"> <MenuToggler /> </div>
+                        </div>
 
-                        <button className="menu-btn">
-                            <span className="icon la la-bell"></span>
-                        </button>
+                        <Link href={'/dashboard/interview-invites'}>
+                            <button className="menu-btn">
+                                <span className="icon la la-bell"></span>
+                            </button>
+                        </Link>
                         {/* End notification-icon */}
 
                         {/* <!-- Dashboard Option --> */}
-                        <div className="dropdown dashboard-option">
+                        <div className="dropdown dashboard-option ">
                             {/* <a
                                 className="dropdown-toggle"
                                 role="button"
@@ -114,4 +128,4 @@ const DashboardCandidatesHeader = () => {
     );
 };
 
-export default DashboardCandidatesHeader;
+export default DashboardCandidatesHeader

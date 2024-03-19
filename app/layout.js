@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
 
         <body>
           <Provider store={store}>
-            <div className="page-wrapper">
+            <div className="page-wrapper poppins-semibold">
               <storeWrapper>
                 {children}
               </storeWrapper>

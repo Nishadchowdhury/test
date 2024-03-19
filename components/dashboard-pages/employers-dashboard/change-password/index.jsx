@@ -31,7 +31,7 @@ const index = () => {
           <BreadCrumb title="Change Password!" />
           {/* breadCrumb */}
 
-          <MenuToggler />
+          {/* <MenuToggler /> */}
           {/* Collapsible sidebar button */}
 
           <div className="ls-widget">

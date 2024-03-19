@@ -7,43 +7,15 @@ const SidebarFooter = () => {
   ];
 
   return (
-    <div className="mm-add-listing mm-listitem pro-footer">
-      <a href="#" className="theme-btn btn-style-one mm-listitem__text">
-        Job Post
-      </a>
-      {/* job post btn */}
+    <div className=" mt-3  mb-3 jobDetailsBtn ">
+      <button className="theme-btn btn-style-one mm-listitem__text">
+        Accept
+      </button>
 
-      <div className="mm-listitem__text">
-        <div className="contact-info">
-          <span className="phone-num">
-            <span>Call us</span>
-            <a href="tel:1234567890">123 456 7890</a>
-          </span>
-          <span className="address">
-            329 Queensberry Street, North Melbourne VIC <br />
-            3051, Australia.
-          </span>
-          <a href="mailto:support@RemoteCoded.com" className="email">
-            support@RemoteCoded.com
-          </a>
-        </div>
-        {/* End .contact-info */}
+      <button className="theme-btn btn-style-three call-modal">
+        Decline
+      </button>
 
-        <div className="social-links">
-          {socialContent.map((item) => (
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={item.id}
-            >
-              <i className={`fab ${item.icon}`}></i>
-            </a>
-          ))}
-        </div>
-        {/* End social-links */}
-      </div>
-      {/* End .mm-listitem__text */}
     </div>
   );
 };

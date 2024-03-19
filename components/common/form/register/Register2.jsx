@@ -5,14 +5,19 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import LoginWithSocial from "./LoginWithSocial";
 import FormContent2 from "./FormContent2";
 import Link from "next/link";
-import {  } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 
 const Register2 = () => {
 
+  const { isSignedIn, user, isLoaded } = useUser();
 
-
+  //auto redirect to dashboard after login
+  if (user?.id) {
+    redirect('/dashboard/my-profile');
+  }
 
   return (
     <div className="form-inner">

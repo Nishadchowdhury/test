@@ -16,6 +16,7 @@ const DashboardCandidatesSidebar = () => {
   const percentage = 30;
 
   const dispatch = useDispatch();
+
   // menu togggle handler
   const menuToggleHandler = () => {
     dispatch(menuToggle());
@@ -30,13 +31,10 @@ const DashboardCandidatesSidebar = () => {
     }
   }
 
-
-
-
   return (
-    <div className={`user-sidebar ${menu ? "sidebar_open " : ""}`}
+    <div className={`user-sidebar  ${menu ? "sidebar_open " : ""}`}
       style={{
-        width: !menu && '5vw',
+        width: !menu && '100px',
       }}
     >
       {/* Start sidebar close icon */}
@@ -53,11 +51,13 @@ const DashboardCandidatesSidebar = () => {
           </Link>
         </div>
 
-        <div className=" d-inline-block ">
+
+
+        {/* <div className=" d-inline-block ">
           <div className="fix-icon" onClick={menuToggleHandler}>
-            <span className="flaticon-close"></span>
+            <span className="flaticon-arrows-2 "></span>
           </div>
-        </div>
+        </div> */}
 
       </div>
       {/* End sidebar close icon */}
@@ -69,7 +69,7 @@ const DashboardCandidatesSidebar = () => {
           {/* collapsible sidebar */}
 
           <div className="logo-box mb-3 d-none d-lg-flex justify-content-between">
-            <div className={`logo me-3  baseTransition ${!menu ? " opacity-0" : "opacity-100"} `}>
+            <div className={`logo   baseTransition ${!menu ? " opacity-0 w-0" : "opacity-100 me-3"} `}>
               <Link href="/">
                 <Image
                   alt="brand"
@@ -81,16 +81,23 @@ const DashboardCandidatesSidebar = () => {
               </Link>
             </div>
 
-            <div className=" d-inline-block ">
-              <div className="fix-icon" onClick={() => menuToggleHandler()}>
-                <span
+            <div className={`logo  baseTransition ${!menu ? " opacity-100 " : "opacity-0 w-0"} `}>
+              <Link href="/">
+                <Image
+                  alt="brand"
+                  src="/images/mini-logo.png"
+                  width={154}
+                  height={50}
+                  priority
+                />
+              </Link>
 
-                  className={`${menu ? "flaticon-arrows-2  arrow-close" : "flaticon-arrows-3 arrow-open"}  " baseTransition"`}></span>
-              </div>
+            
+
+
+
             </div>
-
           </div>
-
           {/* Routes */}
 
 
@@ -103,7 +110,7 @@ const DashboardCandidatesSidebar = () => {
               key={item.id}
             >
               <Link className={!menu && "w-fit"} href={item.routePath}>
-                <i className={`la ${item.icon} ${menu && "me-3"} `}></i> {menu && item.name}
+                <i className={`la ${item.icon} ${menu && "me-3"} `}></i> <span className={`baseTransition ${!menu && "w-0"}`} >{menu && item.name}</span>
               </Link>
             </li>
           ))}
@@ -112,7 +119,13 @@ const DashboardCandidatesSidebar = () => {
         </ul>
         {/* End navigation */}
 
-        {menu && <div className="skills-percentage">
+        {<div className={`skills-percentage baseTransition `}
+
+          style={{
+            scale: menu ? 1 : 0,
+            fontSize: !menu && 0
+          }}>
+
           <h4>Skills Percentage</h4>
           <p>
             `Put value for <strong>Cover Image</strong> field to increase your
@@ -123,7 +136,7 @@ const DashboardCandidatesSidebar = () => {
               background
               backgroundPadding={6}
               styles={buildStyles({
-                backgroundColor: "#7367F0",
+                backgroundColor: "#16d512",
                 textColor: "#fff",
                 pathColor: "#fff",
                 trailColor: "transparent",

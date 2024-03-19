@@ -5,7 +5,7 @@
 		padding-left: calc(300px )
 	}
 	.slideClose{
-		padding-left: 5vw
+		padding-left: 100px
 	}
 
 }
@@ -15,7 +15,7 @@
 		padding-left: 310px
 	}
 	.slideClose{
-		padding-left: 5vw
+		padding-left: 100px
 	}
 
 }
@@ -25,7 +25,7 @@
 		padding-left: 297px
 	}
 	.slideClose{
-		padding-left: 5vw
+		padding-left: 100px
 	}
 
 	.main-menu .navigation > li {
@@ -143,7 +143,7 @@
 	}
 
 	.user-sidebar .sidebar-inner {
-		padding: 20px 30px 40px;
+		padding: 10px 30px 20px 30px;
 	}
 
 	.user-sidebar {
@@ -169,7 +169,7 @@
 
 	.dashboard {
 		.dashboard-outer {
-			padding: 40px 30px 0;
+			padding: 15px 20px 0;
 		}
 
 		.upper-title-box {
@@ -217,6 +217,9 @@
 	// .slideClose{
 	// 	padding-left: 0vw
 	// }
+	
+
+
 	.main-header {
 		.outer-box .upload-cv {
 			margin-right: 0;
@@ -234,7 +237,7 @@
 
 	.banner-carousel.default-nav .owl-nav,
 	.main-header .outer-box .btn-box {
-		display: none;
+		// display: none;
 	}
 
 	.main-header .menu-btn {
@@ -721,7 +724,7 @@
 	.main-header .dashboard-option .dropdown-menu,
 	.main-header .dashboard-option .dropdown-toggle::after,
 	.main-header .dashboard-option .name {
-		display: none;
+		// display: none;
 	}
 
 	.main-header .menu-btn:first-child {
@@ -766,11 +769,14 @@
 		}
 	}
 
-	.hide-sm,
+	
 	.main-header .main-box,
 	.sticky-header {
-		display: none !important;
+		// display: none !important;
+	.sticky-header, .hidden-md {
+		opacity : 1 !important;
 	}
+
 
 	.mobile-header,
 	.mm-add-listing,
@@ -796,7 +802,7 @@
 		}
 
 		.nav-outer .main-menu {
-			display: none;
+			// display: none;
 		}
 	}
 
@@ -1345,7 +1351,7 @@
 	}
 	
 .sidebar_padding{
-	padding: 30px  5px !important;
+	padding: 10px  5px !important;
   }
 
   .navigation li a i {
@@ -2335,7 +2341,7 @@
 	}
 
 	.dashboard .dashboard-outer {
-		padding: 40px 15px 0;
+		padding: 15px 20px 0;
 	}
 
 	.ls-widget {
@@ -2486,4 +2492,5 @@
 	#login-modal .login-form .field-outer {
 		align-items: flex-end;
 	}
+}
 }

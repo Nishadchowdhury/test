@@ -10,7 +10,7 @@ const Register = () => {
   // return null
   return (
     <div className="form-inner">
-      <h3>Create a Free RemoteCoded Account</h3>
+      <h3>Signup</h3>
 
       <Tabs>
         <div className="form-group register-dual">
