@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 const DashboardCandidatesHeader = () => {
     const { menu } = useSelector((state) => state.toggle);
     const [navbar, setNavbar] = useState(false);
-  
+
     const changeBackground = () => {
         if (window.scrollY >= 0) {
             setNavbar(true);
@@ -39,17 +39,21 @@ const DashboardCandidatesHeader = () => {
                 {/* <!-- Main box --> */}
                 <div className="main-box ">
                     {/* <!--Nav Outer --> */}
-                    <div className="nav-outer"> 
+                    <div className="nav-outer">
                         <div className="logo-box">
 
-                            <div className="logo  hidden-md w-0">
+                            <div className="logo d-md-none  ">
                                 <Link href="/">
                                     <Image
                                         alt="brand"
-                                        src="/images/logo.png"
+                                        src="/images/mini-logo.png"
                                         width={154}
                                         height={50}
                                         priority
+                                        style={{
+                                            height: "40px",
+                                            width: "40px",
+                                        }}
                                     />
                                 </Link>
                             </div>

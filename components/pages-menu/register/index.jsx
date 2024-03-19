@@ -14,7 +14,7 @@ export default function Index() {
     if (user?.id) {
       redirect('/dashboard/my-profile');
     }else{
-      redirect('/signin');
+      redirect('/sign-in');
     }  
   }, [])
 
