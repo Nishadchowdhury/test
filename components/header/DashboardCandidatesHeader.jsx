@@ -42,7 +42,7 @@ const DashboardCandidatesHeader = () => {
                     <div className="nav-outer">
                         <div className="logo-box">
 
-                            <div className="logo d-md-none  ">
+                            <div className=" d-md-none  ">
                                 <Link href="/">
                                     <Image
                                         alt="brand"
@@ -71,12 +71,9 @@ const DashboardCandidatesHeader = () => {
                     {/* End .nav-outer */}
 
                     <div className="outer-box">
-                        {/* <button className="menu-btn">
-                            <span className="count">1</span>
-                            <span className="icon la la-heart-o"></span>
-                        </button> */}
+                       
                         {/* wishlisted menu */}
-                        <div className={"baseTransition me-2" + (menu ? "slideOpen " : " slideClose ")}>
+                        <div className={"baseTransition me-2 opacity-100" + (menu ? "slideOpen opacity-0" : " slideClose ")}>
                             <div className="ms-2 d-block d-lg-none"> <MenuToggler /> </div>
                         </div>
 
@@ -89,39 +86,10 @@ const DashboardCandidatesHeader = () => {
 
                         {/* <!-- Dashboard Option --> */}
                         <div className="dropdown dashboard-option ">
-                            {/* <a
-                                className="dropdown-toggle"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            > */}
+                          
 
                             <UserButton />
-                            {/* <span className="name">My Account</span> */}
-                            {/* </a> */}
-
-                            {/* <ul className="dropdown-menu">
-                                {candidatesMenuData.map((item) => (
-                                    <li
-                                        className={`${
-                                            isActiveLink(
-                                                item.routePath,
-                                                usePathname()
-                                            )
-                                                ? "active"
-                                                : ""
-                                        } mb-1`}
-                                        key={item.id}
-                                    >
-                                        <Link href={item.routePath}>
-                                            <i
-                                                className={`la ${item.icon}`}
-                                            ></i>{" "}
-                                            {item.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul> */}
+                            
                         </div>
                         {/* End dropdown */}
                     </div>
