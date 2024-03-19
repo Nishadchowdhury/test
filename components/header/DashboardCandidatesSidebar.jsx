@@ -136,7 +136,7 @@ const DashboardCandidatesSidebar = () => {
               background
               backgroundPadding={6}
               styles={buildStyles({
-                backgroundColor: "#16d512",
+                backgroundColor: "#16a34a",
                 textColor: "#fff",
                 pathColor: "#fff",
                 trailColor: "transparent",
